@@ -1,0 +1,20 @@
+<!-- add_cash.html allows user to add cash to their portfolio -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <h3>Add Money (i.e. Income) to Account!</h3>
+    <br>
+    <form action="/add_cash" method="post">
+        <div class="form-group">
+            <input autocomplete="off" placeholder="Amount to Add" min="1" step="0.01" class="form-control" name="cash" type="numeric">
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Add Cash</button>
+
+    </form>
+{% endblock %}

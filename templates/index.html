@@ -1,0 +1,47 @@
+<!-- index.html is the home page which shows all the shares owned by the user -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+
+        </thead>
+        <tfoot>
+            <tr>
+               <td colspan="4"></td>
+               <td>{{grand_total}}</td>
+            </tr>
+
+        </tfoot>
+        <tbody>
+            {% for holding in holdings %}
+            <tr>
+                <td>{{holding["symbol"]}}</td>
+                <td>{{holding["name"]}}</td>
+                <td>{{holding["shares"]}}</td>
+                <td>{{holding["price"]}}</td>
+                <td>{{holding["total"]}}</td>
+            </tr>
+            {% endfor %}
+            <tfoot>
+                <td colspan="4"><em>CASH</em></td>
+                <td>{{cash}}</td>
+            </tfoot>
+        </tbody>
+
+
+    </table>
+
+{% endblock %}

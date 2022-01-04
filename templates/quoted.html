@@ -1,0 +1,13 @@
+<!-- quoted.html is the page that displays the quote wanted by the user -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <p>
+        A share of {{stock['name']}} {{stock['symbol']}} costs {{stock['price']}}.
+    </p>
+{% endblock %}
